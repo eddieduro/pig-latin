@@ -3,7 +3,7 @@ describe ("translator",function() {
     expect(translator('e')).to.equal('eay');
   });
 
-  it("will check if a string has consecutive consonants",function() {
-    expect(translator('bob')).to.equal('b');
+  it("will check if a string has consecutive consonants, move those consonants to the end and then add ay ",function() {
+    expect(translator('bob')).to.equal('obbay');
   });
 });

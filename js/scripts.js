@@ -6,6 +6,7 @@ var regExVowel = /[aeiou]/i;
 var regExCons = /[^aeiou]/gi;
 var cons = string.match(regExCons);
 var isVowels = string.match(regExVowel);
+var concatStr;
 
 for(var i = 0; i < strArr.length; i++) {
    if(isVowels[i] === strArr[0]) {
@@ -18,12 +19,13 @@ for(var i = 0; i < strArr.length; i++) {
 
     var newStr = string.split(isVowels[i]);
 
-     var popStr = newStr.pop([i]);
+    //  var popStr = newStr.pop([i]);
 
-    var joinStr = popStr.join(isVowels[i]);
+    var lastStr = newStr.pop();
 
 
-    return popStr;
+    concatStr = lastStr.concat(newStr);
+    return isVowels[i] + concatStr + 'ay';
     // var newCons = string.substr([i], string.indexOf(isVowels[i]));
     // return newCons;
   }
