@@ -4,30 +4,30 @@ var strArr = [];
 var strArr = string.split("");
 var regExVowel = /[aeiou]/i;
 var regExCons = /[^aeiou]/gi;
+var quStart =   /[aeio]/gi;
 var cons = string.match(regExCons);
 var isVowels = string.match(regExVowel);
 var concatStr;
+
+
 
 for(var i = 0; i < strArr.length; i++) {
    if(isVowels[i] === strArr[0]) {
      return string + 'ay';
    }
-  //  } else if (cons[i] === strArr[i]){
-  //    var tempArr = cons.join(strArr[i]);
-  //    var newArr = cons.splice(strArr[i]);
-  //    return newArr;
+
+   if(strArr[0] === "q" && strArr[1] === "u") {
+     var isVowels = string.match(quStart);
+     var newStr = string.split(isVowels[i]);
+     var lastStr = newStr.pop();
+     concatStr = lastStr.concat(newStr);
+     return isVowels[i] + concatStr + 'ay';
+   }
 
     var newStr = string.split(isVowels[i]);
-
-    //  var popStr = newStr.pop([i]);
-
     var lastStr = newStr.pop();
-
-
     concatStr = lastStr.concat(newStr);
     return isVowels[i] + concatStr + 'ay';
-    // var newCons = string.substr([i], string.indexOf(isVowels[i]));
-    // return newCons;
   }
 }
 
